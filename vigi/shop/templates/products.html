@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        <h3>Produktų sarašas:</h3>
+        <hr>
+        <div class="list-group">
+        {% for product in products %}
+          <li class="list-group-item list-group-item-action">{{product}} {{product.price}}Eur/vnt.</li>
+
+        {% endfor %}
+        </div>
+
+        {% endblock %}

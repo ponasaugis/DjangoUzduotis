@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>{{customer}}</h1>
+    <p class="text-secondary">{{customer.email}}</p>
+<hr>
+
+    {% for line in customer.orders.all %}
+        {% for a in line.productorder.all %}
+            <p>{{a.quantity}}vnt. {{a.product_id}} {{a.product_id.price}} </p>
+        {% endfor %}
+    <p class="strong">Viso: {{line.quantity_price}}Eur</p>
+    {% endfor %}
+    {{customer.orders.productorder.quantity_price}}
+{% endblock %}
